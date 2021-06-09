@@ -614,23 +614,26 @@ extension on ConstructorElement {
     return constructorName == fallbackConstructorName;
   }
 
-  String unionValue(FreezedUnionCase unionCase) {
-    final annotation = const TypeChecker.fromRuntime(FreezedUnionValue)
-        .firstAnnotationOf(this, throwOnUnresolved: false);
-    if (annotation != null) {
-      return annotation.getField('value')!.toStringValue()!;
+  List<String> unionValue(FreezedUnionCase unionCase) {
+    final annotations = const TypeChecker.fromRuntime(FreezedUnionValue)
+        .annotationsOf(this, throwOnUnresolved: false);
+
+    if (annotations.isNotEmpty) {
+      return annotations
+          .map((annotation) => annotation.getField('value')!.toStringValue()!)
+          .toList();
     }
 
     final constructorName = isDefaultConstructor(this) ? 'default' : name;
     switch (unionCase) {
       case FreezedUnionCase.none:
-        return constructorName;
+        return [constructorName];
       case FreezedUnionCase.kebab:
-        return kebabCase(constructorName);
+        return [kebabCase(constructorName)];
       case FreezedUnionCase.pascal:
-        return pascalCase(constructorName);
+        return [pascalCase(constructorName)];
       case FreezedUnionCase.snake:
-        return snakeCase(constructorName);
+        return [snakeCase(constructorName)];
       default:
         throw FallThroughError();
     }

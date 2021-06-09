@@ -164,6 +164,7 @@ class __$CloneablePropertyCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_CloneableProperty implements _CloneableProperty {
   _$_CloneableProperty(
       {required this.name,
@@ -254,7 +255,7 @@ class _$ConstructorDetailsTearOff {
 
   _ConstructorDetails call(
       {required String name,
-      required String unionValue,
+      required List<String> unionValues,
       required bool isConst,
       required String redirectedName,
       required ParametersTemplate parameters,
@@ -271,7 +272,7 @@ class _$ConstructorDetailsTearOff {
       required List<AssertTemplate> asserts}) {
     return _ConstructorDetails(
       name: name,
-      unionValue: unionValue,
+      unionValues: unionValues,
       isConst: isConst,
       redirectedName: redirectedName,
       parameters: parameters,
@@ -296,7 +297,7 @@ const $ConstructorDetails = _$ConstructorDetailsTearOff();
 /// @nodoc
 mixin _$ConstructorDetails {
   String get name => throw _privateConstructorUsedError;
-  String get unionValue => throw _privateConstructorUsedError;
+  List<String> get unionValues => throw _privateConstructorUsedError;
   bool get isConst => throw _privateConstructorUsedError;
   String get redirectedName => throw _privateConstructorUsedError;
   ParametersTemplate get parameters => throw _privateConstructorUsedError;
@@ -325,7 +326,7 @@ abstract class $ConstructorDetailsCopyWith<$Res> {
       _$ConstructorDetailsCopyWithImpl<$Res>;
   $Res call(
       {String name,
-      String unionValue,
+      List<String> unionValues,
       bool isConst,
       String redirectedName,
       ParametersTemplate parameters,
@@ -354,7 +355,7 @@ class _$ConstructorDetailsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = freezed,
-    Object? unionValue = freezed,
+    Object? unionValues = freezed,
     Object? isConst = freezed,
     Object? redirectedName = freezed,
     Object? parameters = freezed,
@@ -375,10 +376,10 @@ class _$ConstructorDetailsCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      unionValue: unionValue == freezed
-          ? _value.unionValue
-          : unionValue // ignore: cast_nullable_to_non_nullable
-              as String,
+      unionValues: unionValues == freezed
+          ? _value.unionValues
+          : unionValues // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       isConst: isConst == freezed
           ? _value.isConst
           : isConst // ignore: cast_nullable_to_non_nullable
@@ -448,7 +449,7 @@ abstract class _$ConstructorDetailsCopyWith<$Res>
   @override
   $Res call(
       {String name,
-      String unionValue,
+      List<String> unionValues,
       bool isConst,
       String redirectedName,
       ParametersTemplate parameters,
@@ -479,7 +480,7 @@ class __$ConstructorDetailsCopyWithImpl<$Res>
   @override
   $Res call({
     Object? name = freezed,
-    Object? unionValue = freezed,
+    Object? unionValues = freezed,
     Object? isConst = freezed,
     Object? redirectedName = freezed,
     Object? parameters = freezed,
@@ -500,10 +501,10 @@ class __$ConstructorDetailsCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      unionValue: unionValue == freezed
-          ? _value.unionValue
-          : unionValue // ignore: cast_nullable_to_non_nullable
-              as String,
+      unionValues: unionValues == freezed
+          ? _value.unionValues
+          : unionValues // ignore: cast_nullable_to_non_nullable
+              as List<String>,
       isConst: isConst == freezed
           ? _value.isConst
           : isConst // ignore: cast_nullable_to_non_nullable
@@ -565,10 +566,11 @@ class __$ConstructorDetailsCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_ConstructorDetails extends _ConstructorDetails {
   _$_ConstructorDetails(
       {required this.name,
-      required this.unionValue,
+      required this.unionValues,
       required this.isConst,
       required this.redirectedName,
       required this.parameters,
@@ -588,7 +590,7 @@ class _$_ConstructorDetails extends _ConstructorDetails {
   @override
   final String name;
   @override
-  final String unionValue;
+  final List<String> unionValues;
   @override
   final bool isConst;
   @override
@@ -620,7 +622,7 @@ class _$_ConstructorDetails extends _ConstructorDetails {
 
   @override
   String toString() {
-    return 'ConstructorDetails(name: $name, unionValue: $unionValue, isConst: $isConst, redirectedName: $redirectedName, parameters: $parameters, impliedProperties: $impliedProperties, isDefault: $isDefault, isFallback: $isFallback, hasJsonSerializable: $hasJsonSerializable, fullName: $fullName, withDecorators: $withDecorators, implementsDecorators: $implementsDecorators, decorators: $decorators, cloneableProperties: $cloneableProperties, canOverrideToString: $canOverrideToString, asserts: $asserts)';
+    return 'ConstructorDetails(name: $name, unionValues: $unionValues, isConst: $isConst, redirectedName: $redirectedName, parameters: $parameters, impliedProperties: $impliedProperties, isDefault: $isDefault, isFallback: $isFallback, hasJsonSerializable: $hasJsonSerializable, fullName: $fullName, withDecorators: $withDecorators, implementsDecorators: $implementsDecorators, decorators: $decorators, cloneableProperties: $cloneableProperties, canOverrideToString: $canOverrideToString, asserts: $asserts)';
   }
 
   @override
@@ -629,9 +631,9 @@ class _$_ConstructorDetails extends _ConstructorDetails {
         (other is _ConstructorDetails &&
             (identical(other.name, name) ||
                 const DeepCollectionEquality().equals(other.name, name)) &&
-            (identical(other.unionValue, unionValue) ||
+            (identical(other.unionValues, unionValues) ||
                 const DeepCollectionEquality()
-                    .equals(other.unionValue, unionValue)) &&
+                    .equals(other.unionValues, unionValues)) &&
             (identical(other.isConst, isConst) ||
                 const DeepCollectionEquality()
                     .equals(other.isConst, isConst)) &&
@@ -679,7 +681,7 @@ class _$_ConstructorDetails extends _ConstructorDetails {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(name) ^
-      const DeepCollectionEquality().hash(unionValue) ^
+      const DeepCollectionEquality().hash(unionValues) ^
       const DeepCollectionEquality().hash(isConst) ^
       const DeepCollectionEquality().hash(redirectedName) ^
       const DeepCollectionEquality().hash(parameters) ^
@@ -704,7 +706,7 @@ class _$_ConstructorDetails extends _ConstructorDetails {
 abstract class _ConstructorDetails extends ConstructorDetails {
   factory _ConstructorDetails(
       {required String name,
-      required String unionValue,
+      required List<String> unionValues,
       required bool isConst,
       required String redirectedName,
       required ParametersTemplate parameters,
@@ -724,7 +726,7 @@ abstract class _ConstructorDetails extends ConstructorDetails {
   @override
   String get name => throw _privateConstructorUsedError;
   @override
-  String get unionValue => throw _privateConstructorUsedError;
+  List<String> get unionValues => throw _privateConstructorUsedError;
   @override
   bool get isConst => throw _privateConstructorUsedError;
   @override
@@ -952,6 +954,7 @@ class __$DataCopyWithImpl<$Res> extends _$DataCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_Data implements _Data {
   _$_Data(
       {required this.name,
@@ -1169,6 +1172,7 @@ class __$GlobalDataCopyWithImpl<$Res> extends _$GlobalDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_GlobalData implements _GlobalData {
   _$_GlobalData({required this.hasJson, required this.hasDiagnostics});
 

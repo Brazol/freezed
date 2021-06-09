@@ -29,11 +29,13 @@ class FromJson {
       final cases = constructors
           .where((element) => !element.isFallback)
           .map((constructor) {
-        final caseName = constructor.unionValue;
+        final cases = constructor.unionValues
+            .map((value) => ''''case '$value':''')
+            .join('\n');
         final concreteName = constructor.redirectedName;
 
         return '''
-        case '$caseName':
+        $cases
           return $concreteName$genericParameters.fromJson(json);
         ''';
       }).join();

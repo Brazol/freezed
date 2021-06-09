@@ -174,7 +174,7 @@ ${copyWith.abstractCopyWithGetter}
     if (!shouldGenerateJson) return '';
 
     final addRuntimeType = allConstructors.length > 1
-        ? "..['$unionKey'] = '${constructor.unionValue}'"
+        ? "..['$unionKey'] = '${constructor.unionValues.first}'"
         : '';
 
     return '''
