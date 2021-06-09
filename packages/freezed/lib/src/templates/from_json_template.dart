@@ -30,7 +30,7 @@ class FromJson {
           .where((element) => !element.isFallback)
           .map((constructor) {
         final cases = constructor.unionValues
-            .map((value) => ''''case '$value':''')
+            .map((value) => '''case '$value':''')
             .join('\n');
         final concreteName = constructor.redirectedName;
 
